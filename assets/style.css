@@ -1,0 +1,83 @@
+
+/* 전체 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #ffffff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* 플로팅 네비게이션 */
+.floating-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.floating-nav button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.floating-nav button:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}
+
+/* header/footer 영역 기본 스타일 */
+#header, #footer {
+  padding: 2rem;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+/* main 섹션 기본 스타일 */
+#main {
+  padding: 3rem 1rem;
+}
+
+/* 이력서 섹션 */
+#resume {
+  padding: 4rem 1rem;
+  background-color: #f4f4f4;
+}
+
+/* 작업물 전체 섹션 */
+#works {
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+}
+
+/* 작업물 개별 카드 스타일 */
+.work-item {
+  background: linear-gradient(to bottom right, #e9e4ff, #dcd9ff);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.work-item:hover {
+  transform: translateY(-5px);
+}

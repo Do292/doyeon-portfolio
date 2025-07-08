@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이도연 포트폴리오</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <div id="header"></div>
+  <div id="main"></div>
+  <div id="footer"></div>
+
+  <div class="floating-nav">
+    <button onclick="scrollToSection('resume')">📄</button>
+    <button onclick="scrollToSection('work-dev')">📦</button>
+    <button onclick="scrollToSection('work-onsite')">🧳</button>
+    <button onclick="scrollToSection('work-marketing')">📣</button>
+  </div>
+
+  <script src="include.js"></script>
+</body>
+</html>
+
+<script>
+
+const includes = async () => {
+  const targets = [
+    { id: 'header', file: 'components/header.html' },
+    { id: 'main', file: 'components/main.html' },
+    { id: 'footer', file: 'components/footer.html' }
+  ];
+
+  for (let t of targets) {
+    const res = await fetch(t.file);
+    const html = await res.text();
+    document.getElementById(t.id).innerHTML = html;
+  }
+};
+
+includes();
+
+ // ✅ 섹션 스크롤 함수
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+</script>

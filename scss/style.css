@@ -456,11 +456,10 @@ html, body {
 
 .intro-section .container {
   margin-top: 80px;
-  padding-top: 140px;
 }
 @media (max-width: 768px) {
   .intro-section .container {
-    padding-top: 30px;
+    margin-top: 40px;
   }
 }
 .intro-section .container .intro-box {

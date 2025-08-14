@@ -53,28 +53,22 @@
           <div class="work-text">
               <h3>Project Overview</h3>
               <p>
-                다수의 제조 솔루션(Modeler, MES, SPC 등)을 하나의 UI 체계로 통합하는 프로젝트로, 
-                제품화 기준에 맞춘 UI 정비 및 퍼블리싱 체계화를 핵심 목표로 함. 
-                Figma 기반 시안 제작부터 SCSS 구조 정리, 테마 분리 및 다크모드 적용까지 전반적인 구조 설계를 주도했으며, 
-                Vue 및 Syncfusion 컴포넌트 기반의 퍼블리싱도 함께 수행.
+                여러 제조 솔루션을 하나의 제품 경험으로 묶기 위해, 공통 UI 체계를 설계하고 퍼블리싱 구조를 정비했습니다.
+                Figma 시안 → SCSS 아키텍처 → 테마/다크모드 분리 → Vue·Syncfusion 기반 적용까지 디자인–퍼블리싱 전 과정을 일관되게 진행했습니다.
               </p>
           </div>
-         </div> 
+        </div> 
 
         <div class="work-block">
-            <div class="block-image">
-                <img src="assets/img/project-visual-1-2.png" alt="Project Image 1" />
-            </div>
-        </div>
-        <div class="work-block">
           <div class="work-text">
-              <h3>UI 표준화 Concept</h3>
-              <p>
-                Nexbe Suite 제품군 통합 과정에서 여러 솔루션(Modeler, MES, SPC 등)의 구분을 직관적으로 인식할 수 있도록, 각
-                제품마다 고유 테마 컬러를 지정하고 이를 SCSS 기반으로 분리해 적용. 상단 헤더의 제품 탭을 선택하면 전체
-                페이지의 주요 포인트 색상이 해당 제품의 컬러로 동적으로 변경되며, 이를 통해 사용자는 각 제품 간 전환을 자연스럽게
-                인식할 수 있도록 구성.
-              </p>
+              <h3>Role & Scope</h3>
+              <ul>
+                <li>제품 전반 IA/레이아웃 구조 설계 및 시안 제작(Figma)</li>
+                <li>SCSS 구조/토큰화(색상·타이포·간격) 및 공통 컴포넌트 가이드</li>
+                <li>테마 시스템(제품별 컬러)과 다크모드 설계/적용</li>
+                <li>Vue·Syncfusion 컴포넌트 스타일 커스터마이징 및 퍼블리싱 적용</li>
+                <li>문서화/핸드오프 및 유지보수 가이드 정리</li>
+              </ul>
           </div>
          </div> 
 
@@ -91,14 +85,37 @@
 
         <div class="work-block">
           <div class="work-text">
-              <h3>기능제안</h3>
+              <h3>Approach — UI Standardization & Theming</h3>
               <ul>
-              <li>메뉴를 직관적으로 보고싶다는 니즈가많아 리본형식으로 구성</li>
-              <li>메뉴를 아이콘이 크게보이는 리본뿐아니라 아이콘+텍스트, 텍스트, 다양한 조합으로 니즈를 만족시키려 노력했다</li>
-              <li>스플릿터를 활용해서 한눈에 보고싶은 니즈 반영</li>
+                <li>제품별 테마 컬러 정의 → 헤더/포커스/액션 요소에 일관 적용, 전환 시 즉시 반영</li>
+                <li>디자인 토큰(color/typography/spacing/z-index) 도입 → SCSS 변수·맵으로 관리</li>
+                <li>다크모드: 대비/가독성 기준 수립, 배경·텍스트·상태 색상 세트 분리</li>
+                <li>네비게이션/밀도 옵션: 리본형(아이콘 큼)·아이콘+텍스트·텍스트형 등 가시성/공간 요구에 맞춘 모드 제공</li>
+                <li>레이아웃 가변성: Splitter로 화면 분할/확장, 데이터 가시성 강화</li>
+                <li>Syncfusion 커스터마이징: Grid/Chart 등 기본 스타일 오버라이드로 제품 룩앤필 통일</li>
               </ul>
           </div>
+        </div> 
+
+        <div class="work-block">
+            <div class="block-image">
+                <img src="assets/img/project-visual-1-2.png" alt="Project Image 1" />
+            </div>
         </div>
+
+        <div class="work-block">
+          <div class="work-text">
+              <h3>Deliverables</h3>
+              <ul>
+                <li>통합 UI 키트 & 컴포넌트 가이드(버튼/폼/테이블/네비게이션)</li>
+                <li>SCSS 토큰/테마 파일(라이트/다크, 제품별 포인트 컬러)</li>
+                <li>레이아웃 템플릿(대시보드/상세/설정) 및 반응형 규칙</li>
+                <li>Syncfusion 스타일 오버라이드와 적용 가이드</li>
+                <li>핸드오프 문서(코드 구조, 클래스 네이밍, 변경 절차)</li>
+                <li>Syncfusion 커스터마이징: Grid/Chart 등 기본 스타일 오버라이드로 제품 룩앤필 통일</li>              
+              </ul>
+          </div>
+        </div> 
 
         <div class="work-block">
             <div class="block-image">
@@ -108,16 +125,12 @@
 
         <div class="work-block">
           <div class="work-text">
-              <h3>업무내용</h3>
+              <h3>Outcome / Impact</h3>
               <ul>
-              <li>Figma 기반 UI 시안 제작 및 전체 퍼블리싱 구조 설계</li>
-              <li>누적으로 복잡해진 CSS/SCSS 자산을 경량화하고 공통 스타일 체계로 재정리</li>
-              <li>제품별 테마 컬러 기반 SCSS 분리 및 다크모드 적용으로 제품 간 시각 흐름 분리</li>
-              <li>시각 요소의 일관성 확보 및 기능 유지 중심의 퍼블리싱 정비</li>
-              <li>Syncfusion UI(Grid, Chart 등)의 기본 구조 분석 및 디자인 시안 기반 스타일 커스터마이징 수행</li>
-              <li>Vue 컴포넌트 구조(slot, props 흐름 등)에 맞춘 마크업 구조에 따라 마크업 작업을 수행하고,일부 UI 동작 요소 구현에 참여</li>
-              <li>Syncfusion 컴포넌트를 활용한 API 연동 및 그리드 기능 구현에 협업 참여</li>
-              <li> 기능 구현에 협업 참여</li>
+                <li>제품군 간 시각 일관성 확보, 화면 전환 시 혼란 감소</li>
+                <li>테마/다크모드 분리로 변경 반영 속도 및 유지보수성 향상</li>
+                <li>공통 컴포넌트/토큰화로 중복 스타일 감소 및 개발 협업 효율 증대비</li>
+                <li>네비게이션/레이아웃 옵션으로 업무 시나리오별 가시성 개선</li>
               </ul>
           </div>
         </div>

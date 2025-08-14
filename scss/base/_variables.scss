@@ -1,0 +1,105 @@
+
+$color-card: linear-gradient(to bottom right, #e9e4ff, #dcd9ff);
+
+@media (max-width: 768px) {
+
+  .work-item {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+// ✅ 반응형 - 모바일에서 한 줄 세로 정렬
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+
+    .image-box {
+      order: -1; // 이미지 위로 올라오게
+      margin-bottom: 30px;
+    }
+
+    .text-box {
+      .sns-icons {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// ✅ 반응형: 모바일 한 줄 정렬
+@media (max-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr;
+
+    .left, .right, .center {
+      text-align: center;
+    }
+
+    .center::before {
+      display: none;
+    }
+
+    .dot {
+      margin: 20px auto;
+    }
+  }
+}
+
+
+// ✅ 반응형 대응 추가
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; // 한 줄씩 세로 정렬
+    gap: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .skill svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .skill svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill p {
+    font-size: 15px;
+  }
+}
+
+.container {
+
+  @media (max-width: 768px) {
+    padding: 0 24px;
+  }
+}

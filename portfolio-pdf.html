@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – PDF Export</title>
+  <!-- Reuse site styles -->
+  <link rel="stylesheet" href="scss/style.css" />
+
+  <style>
+    /* Screen helper (only while previewing before print) */
+    .no-print {
+      position: fixed; inset: auto 16px 16px auto;
+      z-index: 9999;
+      background: #333; color: #fff; border: 0; border-radius: 8px;
+      padding: 10px 14px; cursor: pointer;
+    }
+    .pdf-cover { margin-bottom: 24px; }
+
+    /* Print styles */
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      html, body { background: #fff !important; color: #000 !important; }
+      /* Hide non-content UI */
+      .no-print, .site-header, .nav-links, .hamburger, #scrollToTopBtn { display: none !important; }
+
+      /* Normalize layout for paper */
+      .container { max-width: none; padding: 0; }
+      .site-main { gap: 18mm !important; }
+
+      /* Make work items printable (avoid split) */
+      .work-section .work-box { display: block; break-inside: avoid; margin-bottom: 14mm; }
+      .work-thumbnail { break-inside: avoid; }
+      .work-thumbnail img { width: 100%; height: auto; border-radius: 6px; }
+
+      /* Titles should not be orphaned/split */
+      h1, h2, h3 { break-after: avoid; }
+      .work-block, .about-section, .skills-section { break-inside: avoid; }
+
+      /* Preserve colors */
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <main id="pdf-root" class="site-main container">
+    <!-- Optional simple cover (you can edit or remove) -->
+    <section class="pdf-cover">
+      <h1>Portfolio Highlights</h1>
+      <p class="meta">이 문서는 웹 포트폴리오의 핵심 섹션을 모아 PDF로 저장하기 위한 페이지입니다.</p>
+    </section>
+  </main>
+
+  <!-- Manual print button for preview mode -->
+  <button class="no-print" onclick="window.print()">PDF로 저장</button>
+
+  <script src="assets/js/portfolio-pdf.js"></script>
+</body>
+</html>

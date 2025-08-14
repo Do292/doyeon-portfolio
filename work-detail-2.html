@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark-theme">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work Detail | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="scss/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- ✅ 공통 Header -->
+  <div id="header"></div>
+
+  <!-- ✅ 본문 Content -->
+  <main class="work-detail-page">
+    <section class="work-detail-section">
+      <div class="container">
+        <!-- ✅ 타이틀/서브타이틀 -->
+         <div class="intro-text">
+          <h1>MCS(Material Control System)</h1>
+          <p>롯데인프라셀 파견 프로젝트</p>
+        </div>
+        <!-- ✅ 메타 정보 -->
+        <div class="work-meta-grid">
+          <div class="meta-item">
+            <h6>프로젝트유형 </h6>
+            <p>SI 기반 파견 프로젝트</br>UI 커스터마이징 및 제안 기획 포함</p>
+          </div>
+          <div class="meta-item">
+            <h6>역할, 기여도</h6>
+            <p>Lead Designer 90%</p>
+          </div>
+          <div class="meta-item">
+            <h6>기술스택 </h6>
+            <p>HTML5, CSS, SCSS, JavaScript, SVG, Illustrator</p>
+          </div>
+          <div class="meta-item">
+            <h6>작업기간</h6>
+            <p>2025.01 ~ 2025.02</p>
+          </div>
+        </div>
+
+        <!-- ✅ 프로젝트 내용 블록 반복 -->
+        <div class="work-block">
+            <div class="block-image">
+                <img src="assets/img/project-visual-2.png" alt="Project Image 1" />
+            </div>
+        </div>
+
+        <div class="work-block">
+          <div class="work-text">
+              <h3>Project Overview</h3>
+               <p>
+               롯데 측 사내 시스템(MCS)의 맞춤형 UI를 기획 및 퍼블리싱한 파견 프로젝트. 
+               고객 요구사항에 따라 UI 흐름을 재설계하고, SVG 기반 설비 UI 및 샘플 시안 제안, 스타일 정의 등을 수행. 
+               시안 및 구조 설계와 함께 UI 제안서 작성까지 담당.
+               </p>
+          </div>
+        </div> 
+
+        <div class="work-block">
+            <div class="block-image">
+                <img src="assets/img/project-visual-2-2.png" alt="Project Image 1" />
+            </div>
+        </div>
+
+        <div class="work-block">
+          <div class="work-text">
+              <h3>도면작업, 아이콘작업</h3>
+              <ul>
+              <li>illustrator로 공정 도면 제작 → 규칙적 id 부여 후 SVG로 내보냄.</li>
+              <li>프런트에서 SVG DOM 파싱해 id ↔ 장비 매핑 구성.</li>
+              <li>실시간 좌표 (x, y, θ)로 transform(translate/rotate) 적용해 장비 이동 구현.</li>
+              <li>Stocker/장비 상태는 .on/.off 클래스 토글로 적재·가동·알람 표시.</li>
+              <li>결과: 해상도 독립, 도면 교체만으로 리비전 가능, 의존성↓/성능↑, 운영 가독성 향상.</li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="work-block">
+            <div class="block-image">
+                <img src="assets/img/project-visual-2-3.png" alt="Project Image 1" />
+            </div>
+        </div>
+
+        <div class="work-block">
+          <div class="work-text">
+              <h3>기능리스트 작성</h3>
+              <p>
+               내가 맡은 대시보드·설비 뷰 영역을 중심으로 화면 구조와 표시 규칙을 문서화.</br>
+               Illustrator→SVG 파이프라인(네이밍·좌표계)과 상태 표기(on/off, alarm), 반응형·스크롤 기준, 로딩/빈 상태 UI 등을 정리해 협업 시 참고 자료로 제공.
+
+               </p>
+          </div>
+        </div>
+
+       <div class="work-block">
+            <div class="block-image">
+                <img src="assets/img/project-visual-2-4.png" alt="Project Image 1" />
+            </div>
+        </div>
+
+        <div class="work-block">
+          <div class="work-text">
+              <h3>업무내용</h3>
+              <ul>
+              <li>고객 요구사항 기반 UI 흐름 설계 및 Figma 시안 제작, 개선 방향 기획</li>
+              <li>고객사에 UI 개선 방향 제안서 작성 및 회의를 통해 반영 결정</li>
+              <li>설계, 제안, 퍼블리싱까지 UI 기획 전반에 실무적으로 참여</li>
+              <li>샘플 페이지 구성 및 전체 스타일 방향 제안</li>
+              <li>Vue 컴포넌트 구조(slot, props 흐름 등)에 맞춘 마크업 구조에 따라 마크업 작업을 수행하고,일부 UI 동작 요소 구현에 참여</li>
+              <li>기능 요소에 대한 스타일 정의 및 유지보수 대응</li>
+              </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ 공통 Footer -->
+  <div id="footer"></div>
+
+  <!-- ✅ Include.js -->
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/nav-toggle.js"></script>
+</body>
+</html>

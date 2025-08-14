@@ -1,51 +1,65 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark-theme">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이도연 포트폴리오</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="scss/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <div id="header"></div>
   <div id="main"></div>
   <div id="footer"></div>
 
-  <div class="floating-nav">
-    <button onclick="scrollToSection('resume')">📄</button>
-    <button onclick="scrollToSection('work-dev')">📦</button>
-    <button onclick="scrollToSection('work-onsite')">🧳</button>
-    <button onclick="scrollToSection('work-marketing')">📣</button>
-  </div>
+  <!-- 스크립트는 별도 파일에 관리 -->
+  <!-- (필요한 다른 스크립트) -->
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/nav-toggle.js?v=3"></script>
 
-  <script src="include.js"></script>
+  <!-- ✅ 위로가기: 최종본 (이 한 덩어리만 유지) -->
+  <script>
+    (function () {
+      // 실제 스크롤되는 대상(#main/.site-main/.page-wrapper or window)을 골라서 올린다
+      function scrollAnyTop() {
+        var cands = ['#main', '.site-main', '.page-wrapper'];
+        var did = false;
+        for (var i = 0; i < cands.length; i++) {
+          var el = document.querySelector(cands[i]);
+          if (el && el.scrollHeight > el.clientHeight) {
+            try { el.scrollTo({ top: 0, behavior: 'smooth' }); }
+            catch (e) { el.scrollTop = 0; }
+            did = true; break;
+          }
+        }
+        if (!did) {
+          try { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+          catch (e) { document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }
+        }
+      }
+
+      // 전역 함수 (onclick="scrollToTop()"과 호환)
+      window.scrollToTop = scrollAnyTop;
+
+      // 혹시 onclick 빠져 있어도 버튼만 누르면 동작하게 보강
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('#scrollToTopBtn');
+        if (btn) { e.preventDefault(); scrollAnyTop(); }
+      }, { passive: false });
+    })();
+  </script>
+
+  <!-- ✅ 버튼은 여기에 -->
+  <!-- <div class="floating-box">
+    <button class="fab-pdf no-print desktop-only" onclick="location.href='portfolio-pdf.html'">
+      <i class="fa-regular fa-file-pdf"></i>
+    </button>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </div> -->
+
 </body>
 </html>
-
-<script>
-
-const includes = async () => {
-  const targets = [
-    { id: 'header', file: 'components/header.html' },
-    { id: 'main', file: 'components/main.html' },
-    { id: 'footer', file: 'components/footer.html' }
-  ];
-
-  for (let t of targets) {
-    const res = await fetch(t.file);
-    const html = await res.text();
-    document.getElementById(t.id).innerHTML = html;
-  }
-};
-
-includes();
-
- // ✅ 섹션 스크롤 함수
-  function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-</script>
